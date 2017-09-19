@@ -1,0 +1,29 @@
+package iteration1
+class character {
+  //Defined trait Chracter
+  trait Character
+  /*Defined Case class for Change Health*/
+  case class ChangeHealth(name: String, effectHealthAmount: Int) extends Character
+  /*Defined Case class for character*/
+  case class PhysicalCharacter(name: String, health: Int = 1000, level: Int = 1, alive: Boolean = true, isDead: Boolean = true)
+
+  /* method 1-characters can Deal damage to Character */
+  def DealDamageToCharacter(damagedCharacter: PhysicalCharacter, damage: Int) {
+    if (damagedCharacter.health - damage < 0) {
+      val damagedCharacter.health = 0
+      return;
+    }
+    damagedCharacter.health -= damage;
+  }
+
+  /*method 2- Chracters can heal a character for healToCharacter */
+  def healthTo(healedCharacter: PhysicalCharacter, health: Int) {
+    if (healedCharacter.isDead) return;
+    if (healedCharacter.health + health > 1000) {
+      val healedCharacter.health = 1000
+      return;
+    }
+    healedCharacter.health += health;
+  }
+}
+
